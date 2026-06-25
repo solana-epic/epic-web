@@ -1,26 +1,172 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'Satoshi', 'Inter', var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-geist-mono);
+  --font-heading: 'Canela', 'Editorial New', Georgia, serif;
+  --font-brand: var(--font-quantico), sans-serif;
+  
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  
+  /* EPIC-specific theme variables */
+  --color-epic-bg: var(--epic-bg);
+  --color-epic-surface: var(--epic-surface);
+  --color-epic-elevated: var(--epic-elevated);
+  --color-epic-brand: var(--epic-brand);
+  --color-epic-accent: var(--epic-accent);
+  --color-epic-text-primary: var(--epic-text-primary);
+  --color-epic-text-secondary: var(--epic-text-secondary);
+  --color-epic-text-muted: var(--epic-text-muted);
+  --color-epic-border: var(--epic-border);
+  --color-epic-pill-border: var(--epic-pill-border);
+  
+  --animate-spin-slow: spin 10s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #080B0F;
+  --foreground: #F5EFE6;
+  --card: #11151B;
+  --card-foreground: #F5EFE6;
+  --popover: #11151B;
+  --popover-foreground: #F5EFE6;
+  --primary: #D6B98C;
+  --primary-foreground: #080B0F;
+  --secondary: #171C23;
+  --secondary-foreground: #F5EFE6;
+  --muted: #11151B;
+  --muted-foreground: #A9B1BC;
+  --accent: #6F63FF;
+  --accent-foreground: #F5EFE6;
+  --destructive: #ef4444;
+  --border: #171C23;
+  --input: #171C23;
+  --ring: #6F63FF;
+  --radius: 0.5rem;
+
+  --epic-bg: #080B0F;
+  --epic-surface: #11151B;
+  --epic-elevated: #171C23;
+  --epic-brand: #D6B98C;
+  --epic-accent: #6F63FF;
+  --epic-text-primary: #F5EFE6;
+  --epic-text-secondary: #A9B1BC;
+  --epic-text-muted: #69707A;
+  --epic-border: rgba(214, 185, 140, 0.08);
+  --epic-pill-border: rgba(214, 185, 140, 0.16);
+}
+
+.dark {
+  --background: #080B0F;
+  --foreground: #F5EFE6;
+  --card: #11151B;
+  --card-foreground: #F5EFE6;
+  --popover: #11151B;
+  --popover-foreground: #F5EFE6;
+  --primary: #D6B98C;
+  --primary-foreground: #080B0F;
+  --secondary: #171C23;
+  --secondary-foreground: #F5EFE6;
+  --muted: #11151B;
+  --muted-foreground: #A9B1BC;
+  --accent: #6F63FF;
+  --accent-foreground: #F5EFE6;
+  --destructive: #ef4444;
+  --border: #171C23;
+  --input: #171C23;
+  --ring: #6F63FF;
+
+  --epic-bg: #080B0F;
+  --epic-surface: #11151B;
+  --epic-elevated: #171C23;
+  --epic-brand: #D6B98C;
+  --epic-accent: #6F63FF;
+  --epic-text-primary: #F5EFE6;
+  --epic-text-secondary: #A9B1BC;
+  --epic-text-muted: #69707A;
+  --epic-border: rgba(214, 185, 140, 0.08);
+  --epic-pill-border: rgba(214, 185, 140, 0.16);
+}
+
+.light {
+  --background: #F7F4EF;
+  --foreground: #11151B;
+  --card: #FFFFFF;
+  --card-foreground: #11151B;
+  --popover: #FFFFFF;
+  --popover-foreground: #11151B;
+  --primary: #D6B98C;
+  --primary-foreground: #080B0F;
+  --secondary: #EFE7D8;
+  --secondary-foreground: #11151B;
+  --muted: #FFFFFF;
+  --muted-foreground: #5B6470;
+  --accent: #5A4FE0;
+  --accent-foreground: #FFFFFF;
+  --destructive: #ef4444;
+  --border: #EFE7D8;
+  --input: #EFE7D8;
+  --ring: #5A4FE0;
+
+  --epic-bg: #F7F4EF;
+  --epic-surface: #FFFFFF;
+  --epic-elevated: #EFE7D8;
+  --epic-brand: #D6B98C;
+  --epic-accent: #5A4FE0;
+  --epic-text-primary: #11151B;
+  --epic-text-secondary: #5B6470;
+  --epic-text-muted: #66707A;
+  --epic-border: rgba(8, 11, 15, 0.08);
+  --epic-pill-border: rgba(8, 11, 15, 0.16);
+}
+
+@layer base {
+  * {
+    @apply border-border/80 outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-epic-accent/30 selection:text-epic-text-primary;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+  html {
+    @apply scroll-smooth;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Scrollbar for Premium Technical Feel */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--epic-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--epic-elevated);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--epic-accent);
 }

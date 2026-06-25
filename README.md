@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EPIC — Upgrade Intelligence and Deployment Readiness Landing Page
+
+A premium, developer-first landing page built from scratch for **EPIC**, the Solana program Upgrade Intelligence and Deployment Readiness gateway.
+
+“Know what changes. Know what breaks. Ship with confidence.”
+
+## Technology Stack
+
+- **Framework**: Next.js 15.5 App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4 & custom inline tokens
+- **Animations**: Framer Motion
+- **Icons**: Lucide Icons
+- **Typography**: Geist Mono & Geist Sans (loaded dynamically from Next.js fonts)
+
+## Design Language
+
+- **Premium, Technical, and Confident**
+- **Inspirations**: Linear, Vercel, and Stripe Press.
+- **Color Palette**:
+  - Background: `#0B0A09` (Warm Charcoal/Ebony)
+  - Surface: `#141210` (Warm Obsidian)
+  - Primary Gold: `#C6A15B` (Bright Sand Gold)
+  - Secondary Gold: `#E0C48A` (Pale Gold Accent)
+  - Text Primary: `#F6F3ED` (Warm White)
+  - Text Secondary: `#A8A29E` (Warm Grey)
+
+## Key Landing Page Sections
+
+1. **Hero**: High-impact bold title detailing the core message with dynamic background grids and validation badges.
+2. **Why EPIC**: Structural explanation of the Solana program mutable upgrade problem, distinguishing EPIC from security scanners and static lint tools.
+3. **Pipeline (Compiler → EPIC → Mainnet)**: Visual interactive SVG-connector timeline displaying compiled program binaries passing through state check offsets and releasing cryptographic readiness validation proofs to multisigs.
+4. **Interactive Terminal Demo**: Functional mock terminal allowing users to run interactive CLI queries (`epic check`, `epic space`, `epic audit`) and see layout shifts, account allocations, and safety rules running live.
+5. **Capabilities Grid**: Bento layout illustrating State Layout Verification, Anchor IDL alignment, Realloc boundary checks, and CI/CD gatekeeping.
+6. **Security Rules Showcase**: Code explorer allowing developers to view active rules (e.g. `EPIC-SEC-001`) showing side-by-side vulnerable vs. safe Rust structures.
+7. **Final CTA**: High-impact command-line installer block, documentation redirection, and enterprise support inquiries.
+
+## Project Structure
+
+```
+├── src/
+│   ├── app/
+│   │   ├── globals.css         # Custom dark-theme design tokens & styling layer
+│   │   ├── layout.tsx          # Font configurations & metadata title tags
+│   │   └── page.tsx            # Main landing page assembling sections
+│   ├── components/
+│   │   ├── Header.tsx          # Responsive navigation & CTA controls
+│   │   ├── Hero.tsx            # Headline copy, client credentials & visual grid
+│   │   ├── WhyEpic.tsx         # Platform positioning, problem context
+│   │   ├── Pipeline.tsx        # Interactive compilation flow timeline
+│   │   ├── TerminalDemo.tsx    # Live terminal simulator with colored CLI returns
+│   │   ├── Capabilities.tsx    # Bento feature showcase grid
+│   │   ├── RulesShowcase.tsx   # Interactive rule specs and Rust diff compiler
+│   │   ├── CTA.tsx             # CLI copy-command and enterprise gateways
+│   │   └── Footer.tsx          # Modular links & protocol engineer credits
+│   └── lib/
+│       └── utils.ts            # Class merge helper utilities
+├── package.json                # Project dependencies and workspace scripts
+└── tsconfig.json               # TypeScript path aliasing & strict validation configs
+```
 
 ## Getting Started
 
-First, run the development server:
+First, install the package dependencies:
+
+```bash
+npm install
+```
+
+To run the Next.js development server locally:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) inside your browser to inspect the visual interface.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run a production-ready build optimization check:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
