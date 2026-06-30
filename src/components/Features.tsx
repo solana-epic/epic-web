@@ -170,7 +170,7 @@ export default function Features() {
                 <div className="bg-[#080B0F] border border-epic-brand/8 rounded-lg overflow-hidden text-[10px] font-mono select-none w-full lg:max-w-xs shadow-lg shrink-0 h-20">
                   <div className="bg-[#171C23] border-b border-epic-brand/8 px-3 py-1 flex items-center justify-between text-[#A9B1BC]">
                     <span>epic check</span>
-                    <span className="text-[8px] text-epic-brand">v0.1.0</span>
+                    <span className="text-[8px] text-epic-brand">v0.2.0-beta.0</span>
                   </div>
                   <div className="p-2 space-y-0.5 text-[#F5EFE6] leading-relaxed text-[9px]">
                     <div><span className="text-epic-accent">$</span> epic check v1.so v2.so</div>

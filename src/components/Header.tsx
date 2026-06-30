@@ -88,7 +88,7 @@ export default function Header() {
           <div
             className="flex items-center justify-center h-8 font-mono text-[10px] text-epic-text-secondary bg-epic-surface border border-epic-pill-border px-3 rounded whitespace-nowrap shrink-0 min-w-max select-none"
           >
-            v0.1.0-beta.2
+            v0.2.0-beta.0
           </div>
           <a
             href={SITE_LINKS.github}

@@ -87,7 +87,7 @@ export default function Installation() {
                 </p>
               </div>
               <pre className="p-3 rounded bg-[#080B0F] font-mono text-[10px] text-[#F5EFE6] border border-[#D6B98C]/8 mt-auto">
-                <code>$ epic audit --binary target/deploy/my_program.so</code>
+                <code>$ epic check old_program new_program</code>
               </pre>
             </div>
           </RevealItem>

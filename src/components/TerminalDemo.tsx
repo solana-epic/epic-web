@@ -283,7 +283,7 @@ export default function TerminalDemo() {
                 </div>
 
                 <div className="mt-8 pt-4 border-t border-[#D6B98C]/8 text-[#A9B1BC]/45 text-[9px] flex items-center justify-between select-none">
-                  <span>EPIC Upgrade Intelligence CLI v0.1.0</span>
+                  <span>EPIC Upgrade Intelligence CLI v0.2.0-beta.0</span>
                   <span>Solana Security Gateway</span>
                 </div>
               </div>
